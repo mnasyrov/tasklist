@@ -1,6 +1,5 @@
 import { provider, toFactory, useInstance } from 'react-ioc';
-import { TaskQuery, TaskStore } from './tasks';
-import { TaskService } from './taskService';
+import { TaskQuery, TaskService, TaskStore } from './tasks';
 
 export function useTaskQuery(): TaskQuery {
   return useInstance<TaskQuery>(TaskQuery);

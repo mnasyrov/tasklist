@@ -1,5 +1,4 @@
-import { TaskQuery, TaskStore } from './tasks';
-import { TaskService } from './taskService';
+import { TaskQuery, TaskService, TaskStore } from './tasks';
 
 describe('TaskService', () => {
   describe('createTask()', () => {
