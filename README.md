@@ -2,7 +2,13 @@
 
 A simple task list.
 
-It is a proof-of-concept for building React app with Akita, immer.js and react-ioc.
+This is a proof-of-concept for building React app without Redux.
+
+Following tools are used:
+
+- [Akita](https://github.com/datorama/akita) - State Management Tailored-Made for JS Applications.
+- [react-ioc](https://github.com/gnaeus/react-ioc) - Hierarchical Dependency Injection with new React 16 Context API.
+- [immer.js](https://github.com/immerjs/immer) - It is a tiny package that allows you to work with immutable state in a more convenient way. It is based on the copy-on-write mechanism.
 
 ## Available Scripts
 
