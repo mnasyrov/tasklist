@@ -38,6 +38,7 @@
     "typescript": "3.6.3"
   },
   "scripts": {
+    "clean": "rm -rf build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
