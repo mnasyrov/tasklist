@@ -1,6 +1,9 @@
 # TaskList App
 
-A simple task list.
+_A simple task list._
+
+[![Actions Status](https://github.com/mnasyrov/tasklist/workflows/build/badge.svg)](https://github.com/mnasyrov/tasklist/actions)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 This is a proof-of-concept for building React app without Redux.
 
