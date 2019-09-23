@@ -1,6 +1,7 @@
-# TODO App
+# TaskList App
 
-A simple task list app.
+A simple task list.
+
 It is a proof-of-concept for building React app with Akita, immer.js and react-ioc.
 
 ## Available Scripts

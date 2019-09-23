@@ -1,7 +1,18 @@
 {
-  "name": "todo-akita-poc",
+  "name": "@mnasyrov/tasklist",
+  "description": "A simple task list.",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": "Mikhail Nasyrov <mikhail@mnasyrov.com>",
+  "homepage": "https://github.com/mnasyrov/tasklist",
+  "bugs": {
+    "url": "https://github.com/mnasyrov/tasklist/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mnasyrov/tasklist.git"
+  },
   "dependencies": {
     "@datorama/akita": "4.10.4",
     "@material-ui/core": "4.4.2",

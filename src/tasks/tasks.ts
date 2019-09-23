@@ -30,8 +30,7 @@ export class TaskQuery extends Query<TaskState> {
 }
 
 export class TaskService {
-  constructor(private store: TaskStore) {
-  }
+  constructor(private store: TaskStore) {}
 
   createTask(title: string): string {
     const id = guid();
