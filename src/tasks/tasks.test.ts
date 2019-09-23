@@ -1,4 +1,4 @@
-import { TaskQuery, TaskService, TaskStore } from './tasks';
+import { Task, TaskQuery, TaskService, TaskStore } from './tasks';
 
 describe('TaskService', () => {
   describe('createTask()', () => {
@@ -38,8 +38,8 @@ describe('TaskService', () => {
       expect(modifiedItem).toEqual({
         id: item.id,
         title: 'item1-edited',
-        done: true,
-      });
+        completed: true,
+      } as Task);
 
       expect(state1.items).not.toBe(modifiedState.items);
       expect(item).not.toBe(modifiedItem);
