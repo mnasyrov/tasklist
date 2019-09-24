@@ -1,5 +1,4 @@
-import { Button, Grid, Paper, TextField } from '@material-ui/core';
-import React, { useState, KeyboardEvent } from 'react';
+import React, { KeyboardEvent, useState } from 'react';
 import { useTaskService } from '../taskFacade';
 
 export function TaskAddLine() {
@@ -20,28 +19,24 @@ export function TaskAddLine() {
   }
 
   return (
-    <Paper style={{ padding: 16 }}>
-      <Grid container justify="space-between">
-        <Grid xs={9} md={10} item>
-          <TextField
-            placeholder="Add task here"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            onKeyPress={handleKeyPress}
-            fullWidth
-          />
-        </Grid>
-        <Grid xs={2} md={1} item style={{ marginRight: 16 }}>
-          <Button
-            fullWidth
-            color={'primary'}
-            variant={'outlined'}
-            onClick={() => submit()}
-          >
-            Add
-          </Button>
-        </Grid>
-      </Grid>
-    </Paper>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      }}
+    >
+      <input
+        style={{width: '100%', marginRight: '16px'}}
+        type="text"
+        placeholder="Add task here"
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
+        onKeyPress={handleKeyPress}
+      />
+      <button color={'primary'} onClick={() => submit()}>
+        Add
+      </button>
+    </div>
   );
 }

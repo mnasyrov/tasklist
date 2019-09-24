@@ -1,4 +1,3 @@
-import { Container, Typography } from '@material-ui/core';
 import React from 'react';
 import { TaskAddLine, TaskList } from '../tasks/components';
 
@@ -7,17 +6,17 @@ const APP_TITLE = '✅ TaskList';
 export function App() {
   return (
     <>
-      <Container maxWidth="sm" style={{ marginTop: 32 }}>
-        <Typography variant={'h3'}>{APP_TITLE}</Typography>
+      <h1>{APP_TITLE}</h1>
 
-        <div style={{ marginTop: 16 }}>
+      <div style={{ width: 300 }}>
+        <p>
           <TaskAddLine />
-        </div>
+        </p>
 
-        <div style={{ marginTop: 16 }}>
+        <p>
           <TaskList />
-        </div>
-      </Container>
+        </p>
+      </div>
     </>
   );
 }
