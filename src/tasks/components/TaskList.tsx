@@ -1,14 +1,12 @@
 import React from 'react';
-import { useObservable } from '../../utils';
-import { useTaskQuery, useTaskService } from '../taskFacade';
+import { useTaskService } from '../taskFacade';
+import { Task } from '../tasks';
 
-export function TaskList() {
+export function TaskList({ items }: { items: Task[] }) {
   const taskService = useTaskService();
-  const { items$ } = useTaskQuery();
-  const items = useObservable(items$, []);
 
   if (items.length === 0) {
-    return null;
+    return <span>Empty list</span>;
   }
 
   return (

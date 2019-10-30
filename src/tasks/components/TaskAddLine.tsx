@@ -27,7 +27,7 @@ export function TaskAddLine() {
       }}
     >
       <input
-        style={{width: '100%', marginRight: '16px'}}
+        style={{ width: '100%', marginRight: '16px', fontSize: 'large' }}
         type="text"
         placeholder="Add task here"
         value={title}

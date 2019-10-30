@@ -8,3 +8,8 @@ body {
   background: #fafafa;
   margin: 16px;
 }
+
+.section {
+  width: 300px;
+  margin-bottom: 16px;
+}

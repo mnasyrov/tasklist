@@ -1,4 +1,4 @@
-import { guid, Query, Store } from '@datorama/akita';
+import { Query, Store } from '@datorama/akita';
 
 export interface Task {
   id: string;
@@ -6,17 +6,13 @@ export interface Task {
   completed: boolean;
 }
 
-export type TaskState = {
-  items: Task[];
-};
+export type TaskState = { items: Task[] };
 
-function createInitialState(): TaskState {
-  return { items: [] };
-}
+const INITIAL_TASK_STATE: TaskState = { items: [] };
 
 export class TaskStore extends Store<TaskState> {
   constructor() {
-    super(createInitialState(), { name: 'tasks' });
+    super(INITIAL_TASK_STATE, { name: 'tasks' });
   }
 }
 
@@ -32,7 +28,7 @@ export class TaskService {
   constructor(private store: TaskStore) {}
 
   createTask(title: string): string {
-    const id = guid();
+    const id = Date.now().toString(36);
     const task: Task = { id, title, completed: false };
 
     this.store.update((state) => {
