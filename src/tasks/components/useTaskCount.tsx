@@ -1,8 +1,8 @@
 import { useTaskQuery } from '../taskFacade';
-import { useObservable } from '../../utils';
+import { useProjection } from '@jetstate/react';
 
 export function useTaskCount(): number {
-  const { items$ } = useTaskQuery();
-  const items = useObservable(items$, []);
+  const query = useTaskQuery();
+  const items = useProjection(query.items);
   return items.length;
 }

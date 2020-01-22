@@ -2,13 +2,13 @@ import React from 'react';
 import { useTaskQuery } from '../tasks';
 import { TaskAddLine, TaskList } from '../tasks/components';
 import { useTaskCount } from '../tasks/components/useTaskCount';
-import { useObservable } from '../utils';
+import { useProjection } from '@jetstate/react';
 
 const APP_TITLE = '✅ TaskList';
 
 export function App() {
-  const { items$ } = useTaskQuery();
-  const items = useObservable(items$, []);
+  const query = useTaskQuery();
+  const items = useProjection(query.items);
   const count = useTaskCount();
 
   return (

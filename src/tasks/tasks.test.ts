@@ -7,11 +7,11 @@ describe('TaskService', () => {
       const query = new TaskQuery(store);
       const service = new TaskService(store);
 
-      const state1 = query.getValue();
+      const state1 = query.state;
       expect(state1.items).toEqual([]);
 
       service.createTask('item1');
-      const state2 = query.getValue();
+      const state2 = query.state;
       const item1 = state2.items[0];
       expect(item1.id).toBeDefined();
       expect(item1.title).toBe('item1');
@@ -28,12 +28,12 @@ describe('TaskService', () => {
       const service = new TaskService(store);
 
       service.createTask('item1');
-      const state1 = query.getValue();
+      const state1 = query.state;
       const item = state1.items[0];
       expect(item.title).toBe('item1');
 
       service.editTask(item.id, { title: 'item1-edited', completed: true });
-      const modifiedState = query.getValue();
+      const modifiedState = query.state;
       const modifiedItem = modifiedState.items[0];
       expect(modifiedItem).toEqual({
         id: item.id,
@@ -53,10 +53,10 @@ describe('TaskService', () => {
       const service = new TaskService(store);
 
       const taskId = service.createTask('item1');
-      expect(query.getValue().items.length).toBe(1);
+      expect(query.items.value.length).toBe(1);
 
       service.removeTask(taskId);
-      expect(query.getValue().items.length).toBe(0);
+      expect(query.items.value.length).toBe(0);
     });
   });
 });

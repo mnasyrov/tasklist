@@ -14,26 +14,26 @@
     "url": "https://github.com/mnasyrov/tasklist.git"
   },
   "dependencies": {
-    "@datorama/akita": "4.10.4",
-    "immer": "4.0.0",
+    "@jetstate/core": "0.6.0",
+    "@jetstate/react": "0.6.0",
     "lodash-es": "4.17.15",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "react-ioc": "1.0.0"
   },
   "devDependencies": {
-    "@testing-library/react-hooks": "2.0.1",
-    "@types/jest": "24.0.18",
+    "@testing-library/react-hooks": "3.2.1",
+    "@types/jest": "24.9.0",
     "@types/lodash-es": "4.17.3",
-    "@types/node": "12.7.5",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
-    "eslint": "6.4.0",
-    "eslint-config-prettier": "6.3.0",
-    "prettier": "1.18.2",
-    "react-scripts": "3.1.2",
-    "react-test-renderer": "16.9.0",
-    "typescript": "3.6.3"
+    "@types/node": "13.1.8",
+    "@types/react": "16.9.18",
+    "@types/react-dom": "16.9.5",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "prettier": "1.19.1",
+    "react-scripts": "3.3.0",
+    "react-test-renderer": "16.12.0",
+    "typescript": "3.7.5"
   },
   "scripts": {
     "clean": "rm -rf build",
@@ -41,8 +41,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
-    "eject": "react-scripts eject",
-    "reinstall": "rm -rf node_modules && npm install"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

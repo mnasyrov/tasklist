@@ -1,4 +1,4 @@
-import { Query, Store } from '@datorama/akita';
+import { Query, Store } from '@jetstate/core';
 
 export interface Task {
   id: string;
@@ -8,20 +8,14 @@ export interface Task {
 
 export type TaskState = { items: Task[] };
 
-const INITIAL_TASK_STATE: TaskState = { items: [] };
-
 export class TaskStore extends Store<TaskState> {
   constructor() {
-    super(INITIAL_TASK_STATE, { name: 'tasks' });
+    super({ items: [] });
   }
 }
 
 export class TaskQuery extends Query<TaskState> {
-  items$ = this.select((state) => state.items);
-
-  constructor(protected store: TaskStore) {
-    super(store);
-  }
+  items = this.project((state) => state.items);
 }
 
 export class TaskService {
@@ -33,7 +27,7 @@ export class TaskService {
 
     this.store.update((state) => {
       const items = state.items.concat([task]);
-      return { ...state, items };
+      return { items };
     });
     return id;
   }
@@ -41,7 +35,7 @@ export class TaskService {
   removeTask(id: string) {
     this.store.update((state) => {
       const items = state.items.filter((item) => item.id !== id);
-      return { ...state, items };
+      return { items };
     });
   }
 
@@ -50,7 +44,7 @@ export class TaskService {
       const items = state.items.map((item) => {
         return item.id === id ? { ...item, ...task } : item;
       });
-      return { ...state, items };
+      return { items };
     });
   }
 }
