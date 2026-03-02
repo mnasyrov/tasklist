@@ -17,9 +17,11 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "jsx": "react",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["vitest/globals"]
   },
   "include": [
-    "src"
+    "src",
+    "vite.config.ts"
   ]
 }
